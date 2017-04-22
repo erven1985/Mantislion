@@ -25,5 +25,8 @@
   <%= image_tag @event.avatar.url(:medium) %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<% if current_user %>
+  <%= link_to 'Back', rails_admin_path %>
+<% else %> 
+  <%= link_to 'Back', root_path %>
+<% end %>

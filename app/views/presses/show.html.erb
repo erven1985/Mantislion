@@ -14,5 +14,8 @@
 <%= image_tag @press.avatar.url(:medium) %>
 </p>
 
-<%= link_to 'Edit', edit_press_path(@press) %> |
-<%= link_to 'Back', presses_path %>
+<% if current_user %>
+  <%= link_to 'Back', rails_admin_path %>
+<% else %> 
+  <%= link_to 'Back', root_path %>
+<% end %>

@@ -14,5 +14,8 @@
 	<%= image_tag @news.avatar.url(:medium) %>
 </p>
 
-<%= link_to 'Edit', edit_news_path(@news) %> |
-<%= link_to 'Back', news_index_path %>
+<% if current_user %>
+  <%= link_to 'Back', rails_admin_path %>
+<% else %> 
+  <%= link_to 'Back', root_path %>
+<% end %>

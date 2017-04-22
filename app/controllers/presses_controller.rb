@@ -1,5 +1,5 @@
 class PressesController < ApplicationController
-  before_action :authenticate_user!
+
   before_action :set_press, only: [:show, :edit, :update, :destroy]
 
   # GET /presses
