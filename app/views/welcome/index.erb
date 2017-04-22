@@ -96,6 +96,11 @@
   </script>
   </head>
   <body onLoad="MM_preloadImages('images/camiloh.png')" style="background-color: black">
+  <% if current_user %> 
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => "log" %>
+    <% else %> 
+      <%= link_to "Log in", new_user_session_path, :class => "log" %>
+    <% end %>
   <div class="separation">hello</div>
   <div class="vid-container">
   	<iframe src="https://www.youtube.com/embed/?listType=playlist&list=PLGU97aKgGMA41S7UDmBSIzl1Tuol-OFO2&index=0" id="video" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:101%;width:10	0%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="101%" width="100%"></iframe>
@@ -932,7 +937,14 @@ input {
 .log {
   position: absolute;
   z-index: 1;
-  top: 30px;
+  top: 15px;
+  right: 60px;
+}
+
+.log:hover {
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
 }
   </style>
 
