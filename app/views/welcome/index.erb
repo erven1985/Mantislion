@@ -575,6 +575,15 @@ input {
   width: 100%;
   height: auto;
 }
+.message.text-left {
+  text-transform: uppercase; 
+  color:#44031c; 
+  margin-bottom: 10px; 
+  padding-left: 15px; 
+  font-family: bebasen; 
+  display: none;
+}
+
 </style>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
@@ -678,8 +687,9 @@ input {
                   <!-- Form Area -->
           <div class="contact-form">
               <div class="title_cont_forms">Book DJ Enuff</div>
-                      <!-- Form djenuffbooking -->
-                      <form id="contact-us" method="post" action="https://formspree.io/bayekeshov@gmail.com">  
+                      <!-- Form  -->
+                      <div class="message text-left">Message Sent!</div>
+                      <form class="contact-us" data-mailto="djenuffbooking@gmail.com">  
                           <!-- Left Inputs -->
                           <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
                               <!-- Name -->
@@ -716,8 +726,8 @@ input {
                   <div class="contact-form">
                       <!-- Form -->
                       <div class="title_cont_forms">The Hot Box</div>
-          
-                      <form id="contact-us" method="post" action="https://formspree.io/thatsenuffhotbox@gmail.com">
+                      <div class="message text-left">Message Sent!</div>
+                      <form class="contact-us" data-mailto="thatsenuffhotbox@gmail.com">
                           <!-- Left Inputs -->
                           <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
                               <!-- Name -->
@@ -754,8 +764,8 @@ input {
                   <div class="contact-form">
                       <!-- Form -->
                     <div class="title_cont_forms">That´s Enuff Interviews</div>
-              
-                      <form id="contact-us" method="post" action="https://formspree.io/thatsenuffinterviews@gmail.com">
+                      <div class="message text-left">Message Sent!</div>
+                      <form class="contact-us" data-mailto="thatsenuffinterviews@gmail.com">
                           <!-- Left Inputs -->
                           <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
                               <!-- Name -->
@@ -793,8 +803,8 @@ input {
                   <div class="contact-form">
                       <!-- Form -->
                       <div class="title_cont_forms">Heavy Hitters on Shade 45</div>
-           
-                      <form id="contact-us" method="post" action="https://formspree.io/theheavyhittersdjstv@gmail.com">
+                      <div class="message text-left">Message Sent!</div>
+                      <form class="contact-us" data-mailto="theheavyhittersdjstv@gmail.com">
                           <!-- Left Inputs -->
                           <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
                               <!-- Name -->
@@ -843,7 +853,7 @@ input {
            <p id="nws-content" style="z-index: 1; color:black; text-align: justify; width: 98%; margin-top: 20px; margin-bottom: 10px"></p>
        </div>
        <div id="nws-audio" style="margin-top: 10px; margin-bottom: 40px"></div>
-       <div style="clear:both; height: 200px;"></div>
+       <div style="clear:both; height: 100px;"></div>
     </div>      
 
           <div class="col-xs-12 col-sm-4 col-lg-4">
@@ -1070,6 +1080,36 @@ input {
     var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
      if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
   } 
+
+  $(document).ready(function() {
+    $(".contact-us").submit(function(e) {
+      const receiver = this.dataset.mailto;
+      const name = $("#name").val();
+      const email = $("#mail").val();
+      const subject = $("#subject").val();
+      const message = $("#message").val();
+
+      $.ajax({
+        url: "https://formspree.io/" + receiver, 
+        method: "POST",
+        data: {
+          name: name, 
+          email: email,
+          message: message, 
+          _subject: subject
+        },
+        dataType: "json"
+      });
+
+      e.preventDefault();
+      $(this).get(0).reset();
+      $(this).siblings(".message.text-left").css("display", "inline-block");
+      setTimeout(function(){
+        
+        $(".message").css("display", "none");
+      },5000)
+    });
+  });
 
 
  </script>
