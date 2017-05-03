@@ -698,7 +698,7 @@ input {
                               <!-- Email -->
                               <input type="email" name="mail" id="mail" required class="form" placeholder="Email" />
                               <!-- Subject -->
-                              <input type="text" name="subject" id="subject" required class="form" placeholder="Subject" />
+                              <input type="text" name="_subject" id="subject" required class="form" placeholder="Subject" />
                               <!-- Right Inputs -->
                               <div class="wow animated slideInRight" data-wow-delay=".5s">
                                   <!-- Message -->
@@ -736,7 +736,7 @@ input {
                               <!-- Email -->
                               <input type="email" name="mail" id="mail" required class="form" placeholder="Email" />
                               <!-- Subject -->
-                              <input type="text" name="subject" id="subject" required class="form" placeholder="Subject" />
+                              <input type="text" name="_subject" id="subject" required class="form" placeholder="Subject" />
                               <!-- Right Inputs -->
                             <div class="wow animated slideInRight" data-wow-delay=".5s">
                                 <!-- Message -->
@@ -774,7 +774,7 @@ input {
                               <!-- Email -->
                               <input type="email" name="mail" id="mail" required class="form" placeholder="Email" />
                               <!-- Subject -->
-                              <input type="text" name="subject" id="subject" required class="form" placeholder="Subject" />
+                              <input type="text" name="_subject" id="subject" required class="form" placeholder="Subject" />
                               <!-- Right Inputs -->
                             <div class="wow animated slideInRight" data-wow-delay=".5s">
                                 <!-- Message -->
@@ -813,7 +813,7 @@ input {
                               <!-- Email -->
                               <input type="email" name="mail" id="mail" required class="form" placeholder="Email" />
                               <!-- Subject -->
-                              <input type="text" name="subject" id="subject" required class="form" placeholder="Subject" />
+                              <input type="text" name="_subject" id="subject" required class="form" placeholder="Subject" />
                               <!-- Right Inputs -->
                               <div class="wow animated slideInRight" data-wow-delay=".5s">
                                   <!-- Message -->
@@ -1100,12 +1100,7 @@ input {
       $.ajax({
         url: "https://formspree.io/" + receiver, 
         method: "POST",
-        data: {
-          name: name, 
-          email: email,
-          message: message, 
-          _subject: subject
-        },
+        data: $(this).serialize(),
         dataType: "json"
       });
 
