@@ -289,7 +289,7 @@ a {
   display: none;
 }
 .playlist{
-  width: 50%;
+  width: 18%;
   float: left;
 }
 .oa {
@@ -297,7 +297,7 @@ a {
   width: 47%;
   float: left;
   background-color: #f1f1f1;
-  height: 138%;
+  height: 147%;
 }
 .body-cont-sub{
   width: 98%;
@@ -321,9 +321,16 @@ a {
 }
 .close_sub_cat {
   position: absolute;
-  right: 6%;
-  margin-top: 10px;
   cursor: pointer;
+  right: 37%;
+  margin-top: 20px;
+}
+
+.close_sub {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  top: 20px;
 }
  #contact {
   padding:10px 0 10px;
@@ -504,12 +511,7 @@ input {
   z-index: 100;
   background-color: #fff;
 }
-.close {
-  position: relative;
-  top: 20px;
-  right:20px;
-  color: black;
-}
+
 #nws-name {
   margin-top: 15px;
   margin-left: 40px;
@@ -655,15 +657,12 @@ input {
 </div>
         
     <div class="content_sub">
-        <div class="close_sub_cat">
-           <img src="../images/cancel.svg" style="width:20px">
-        </div>
        <div class="playlist">
             <div class="title_cont">
               Playlist
             </div>
         <div class="body-cont-sub">
-           <iframe src="https://www.audiomack.com/embed4-playlist/thatsenuff/lit-sht" scrolling="no" width="100%" height="355" scrollbars="no" frameborder="0"></iframe>
+            <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Adjenuff%3Aplaylist%3A2ZZtoRm4RSBa6zqjPIjecR" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
         </div>
      </div>
     
@@ -675,6 +674,9 @@ input {
            <iframe src="https://www.youtube.com/embed/?listType=playlist&list=PLVqI7qE3QEepjjj-mtyKPHSArlGAfEiT0&index=0" id="video" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:101%;width:100%; margin-top: -20px;" height="101%" width="100%"></iframe>
          </div>
        </div>
+       <div class="close_sub_cat">
+           <img src="../images/cancel.svg" style="width:20px">
+        </div>
     </div>
 
 
@@ -842,7 +844,7 @@ input {
 
 <!--Cover Display None at the begining  --> 
   <div id="cover">
-    <div class="close"><img src="../images/cancel.svg" style="width:  20px"></div>
+    <div class="close_sub" id="close-btn"><img src="../images/cancel.svg" style="width:  20px"></div>
     <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-8 col-lg-8">
@@ -1050,7 +1052,7 @@ input {
          
     });
       
-      $(".close").click(function() {
+      $("#close-btn").click(function() {
         $("#general").show();
         $("#cover").fadeOut();
           
