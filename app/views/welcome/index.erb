@@ -322,7 +322,6 @@ a {
 .close_sub_cat {
   position: absolute;
   cursor: pointer;
-  left: calc(350px + 44%);
   margin-top: 20px;
 }
 
@@ -998,7 +997,13 @@ input {
   $(document).ready(function(){
       
       $(".on-air").click(function(){
-          
+       
+    const w =  $(".playlist").width();
+    const wind = $(window).width();
+    const w1 = wind/100*45;
+    
+    $(".close_sub_cat").css("left", w + w1);
+
       $('.content_sub').fadeIn('slow');
       $('.content_sub_sec').fadeOut('slow');
       }); 
@@ -1084,6 +1089,7 @@ input {
   } 
 
   $(document).ready(function() {
+
     $(".contact-us").submit(function(e) {
       const receiver = this.dataset.mailto;
       const name = $("#name").val();
