@@ -853,7 +853,7 @@ input {
           <div>
            <p id="nws-content" style="z-index: 1; color:black; text-align: justify; width: 98%; margin-top: 20px; margin-bottom: 10px"></p>
        </div>
-       <div id="nws-audio" style="margin-top: 10px; margin-bottom: 40px"></div>
+       <div id="nws-audio" style="margin-top: 10px;"></div>
        <div style="clear:both; height: 100px;"></div>
     </div>      
 
@@ -1022,7 +1022,7 @@ input {
                 dataType:"json",
                 success: function(result) {
                   
-                  $("#nws-name").html('<span class="name_news_two">'+result.title1 + '</span>' + " " + result.title);
+                  $("#nws-name").html('<span class="name_news_two" id="mytitle1">'+result.title1 + '</span>' + " " + result.title);
                   $("#nws-image").html('<img src="' + result.avatar_url + '" id="myimg" class="img-responsive">');
                   
                   if(result.video && result.video.length) {
@@ -1037,7 +1037,7 @@ input {
 
                   if(result.audio && result.audio.length) {
 
-                    $("#nws-audio").html('<iframe src="' + result.audio + '" id="iaudio" scrolling="no" width="98%" height="300px" scrollbars="no" frameborder="0"></iframe>');
+                    $("#nws-audio").html('<iframe src="' + result.audio + '" id="iaudio" scrolling="no" width="98%" height="252" scrollbars="no" frameborder="0"></iframe>');
                   
                   } else {
                     $("#iaudio").remove();
