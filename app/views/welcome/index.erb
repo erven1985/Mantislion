@@ -870,7 +870,7 @@ input {
                        <%= image_tag news.avatar.url %>
                         <div id="rightagendatwo">
                             <div class="news_line cvr" id="mytitle" style="text-transform: uppercase;">
-                                <a id="<%= news.id %>" data-firstname="<%= User.find(news.user_id).firstname %>"><span id="mytitle1"><%= news.title1 %></span> &nbsp;<%= news.title %></a>
+                                <a id="<%= news.id %>" data-firstname="<%= User.find(news.user_id).firstname %>" data-lastname="<%= User.find(news.user_id).lastname %>"><span id="mytitle1"><%= news.title1 %></span> &nbsp;<%= news.title %></a>
                             </div>
                             <div id="myline"></div>
                         </div>
@@ -1031,7 +1031,7 @@ input {
                   var arr = $('.news_line.cvr a');
                   for(i=0; i < arr.length; i++) {
                     if(arr[i].id == result.id) {
-                      $("#nws-author").html(arr[i].dataset.firstname);
+                      $("#nws-author").html(arr[i].dataset.firstname + " " + arr[i].dataset.lastname);
                     }
                     
                   }
