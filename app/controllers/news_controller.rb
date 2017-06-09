@@ -25,6 +25,7 @@ class NewsController < ApplicationController
 
   def last
     @news = News.find(params[:id])
+    @user = User.find(@news.user_id)
     # render :json => @news||[]
     render :json => @news.to_json(:methods => [:avatar_url])
   end

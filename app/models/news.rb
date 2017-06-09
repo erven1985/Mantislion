@@ -4,4 +4,5 @@ class News < ApplicationRecord
  def avatar_url
     avatar.url
   end
+  	belongs_to :user
 end
