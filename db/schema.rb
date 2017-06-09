@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170609144043) do
+=======
+ActiveRecord::Schema.define(version: 20170422011115) do
+>>>>>>> 48079c87774fdd677fbd541caf4fb8aa59880d46
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -35,9 +39,12 @@ ActiveRecord::Schema.define(version: 20170609144043) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "title1"
+<<<<<<< HEAD
     t.string   "audio"
     t.string   "video"
     t.integer  "user_id"
+=======
+>>>>>>> 48079c87774fdd677fbd541caf4fb8aa59880d46
   end
 
   create_table "presses", force: :cascade do |t|
@@ -49,7 +56,10 @@ ActiveRecord::Schema.define(version: 20170609144043) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+<<<<<<< HEAD
     t.string   "link"
+=======
+>>>>>>> 48079c87774fdd677fbd541caf4fb8aa59880d46
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,11 +76,14 @@ ActiveRecord::Schema.define(version: 20170609144043) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+<<<<<<< HEAD
     t.string   "firstname"
     t.string   "lastname"
     t.string   "twitter"
     t.string   "facebook"
     t.string   "instagram"
+=======
+>>>>>>> 48079c87774fdd677fbd541caf4fb8aa59880d46
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

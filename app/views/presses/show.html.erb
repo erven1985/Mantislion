@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @press.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @press.content %>
+</p>
+<p>
+  <strong>Image:</strong>
+<%= image_tag @press.avatar.url(:medium) %>
+</p>
+
+<% if current_user %>
+  <%= link_to 'Back', rails_admin_path %>
+<% else %> 
+  <%= link_to 'Back', root_path %>
+<% end %>

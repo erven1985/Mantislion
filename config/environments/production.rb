@@ -23,7 +23,11 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
+<<<<<<< HEAD
   config.assets.compile = true
+=======
+  config.assets.compile = false
+>>>>>>> 48079c87774fdd677fbd541caf4fb8aa59880d46
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -83,6 +87,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+<<<<<<< HEAD
 
   config.paperclip_defaults = {
   storage: :s3,
@@ -95,4 +100,6 @@ Rails.application.configure do
   }
 }
 
+=======
+>>>>>>> 48079c87774fdd677fbd541caf4fb8aa59880d46
 end

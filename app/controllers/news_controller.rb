@@ -11,7 +11,10 @@ class NewsController < ApplicationController
   # GET /news/1
   # GET /news/1.json
   def show
+<<<<<<< HEAD
     @newsAll = News.all.last(20).reverse 
+=======
+>>>>>>> 48079c87774fdd677fbd541caf4fb8aa59880d46
   end
 
   # GET /news/new
@@ -23,6 +26,7 @@ class NewsController < ApplicationController
   def edit
   end
 
+<<<<<<< HEAD
   def last
     @news = News.find(params[:id])
     @user = User.find(@news.user_id)
@@ -30,6 +34,8 @@ class NewsController < ApplicationController
     render :json => @news.to_json(:methods => [:avatar_url])
   end
 
+=======
+>>>>>>> 48079c87774fdd677fbd541caf4fb8aa59880d46
   # POST /news
   # POST /news.json
   def create
@@ -78,6 +84,10 @@ class NewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_params
+<<<<<<< HEAD
       params.require(:news).permit(:title, :title1, :content, :avatar, :audio, :video)
+=======
+      params.require(:news).permit(:title, :title1, :content, :avatar)
+>>>>>>> 48079c87774fdd677fbd541caf4fb8aa59880d46
     end
 end
