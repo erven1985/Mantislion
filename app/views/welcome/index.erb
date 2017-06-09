@@ -482,17 +482,25 @@
                   if(result.video && result.video.length) {
                   
                     $("#nws-video").html('<iframe width="98%" height="500" src="' + result.video + '" id="ivideo" frameborder="0" allowfullscreen></iframe>')
-                    
+
                   } else {
 
                     $("#ivideo").remove();
 
                   }
 
-                  if(result.audio && result.audio.length) {
+                  if(result.audio && result.audio.length && result.audio.includes("spotify")) {
+
+                    $("#nws-audio").html('<iframe src="' + result.audio + '" id="iaudio" scrolling="no" width="98%" height="380" scrollbars="no" frameborder="0"></iframe>');
+                  
+                  } else if(result.audio && result.audio.length && result.audio.includes("soundcloud")) {
+
+                    $("#nws-audio").html('<iframe src="' + result.audio + '" id="iaudio" scrolling="no" width="98%" height="450" scrollbars="no" frameborder="no"></iframe>');
+
+                  } else if(result.audio && result.audio.length) {
 
                     $("#nws-audio").html('<iframe src="' + result.audio + '" id="iaudio" scrolling="no" width="98%" height="252" scrollbars="no" frameborder="0"></iframe>');
-                  
+
                   } else {
                     $("#iaudio").remove();
                   }
