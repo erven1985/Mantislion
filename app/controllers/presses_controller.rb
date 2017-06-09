@@ -70,10 +70,8 @@ class PressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def press_params
-<<<<<<< HEAD
+
       params.require(:press).permit(:title, :content, :avatar, :link)
-=======
-      params.require(:press).permit(:title, :content, :avatar)
->>>>>>> 48079c87774fdd677fbd541caf4fb8aa59880d46
+
     end
 end
