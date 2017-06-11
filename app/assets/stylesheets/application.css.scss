@@ -105,6 +105,10 @@ a {
   color: #44031c;
   text-decoration: none;
 }
+
+a:hover, a:focus, a:active, a:visited {
+  background-color:#fff !important;
+}
 .mainmenu { 
   float:right; 
   color: #44031c; 
