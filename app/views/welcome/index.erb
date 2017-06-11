@@ -416,6 +416,12 @@
       
     $(document).ready(function(){
         
+      if($(window).width() <= 768) {
+        $(".logo_m ").css('margin-right', '0px');
+        $('.press_con').css('height', '15%');
+       }
+
+
         $(".close_sub_cat").click(function(){
         $('.content_sub').fadeOut('slow');
         
