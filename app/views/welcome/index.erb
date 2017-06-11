@@ -525,7 +525,7 @@
                     
                     } else if(result.audio && result.audio.length && result.audio.includes("soundcloud")) {
 
-                      $("#nws-audio").html('<iframe src="' + result.audio + '" id="iaudio" scrolling="no" width="98%" height="450" scrollbars="no" frameborder="no"></iframe>');
+                      $("#nws-audio").html('<iframe id="iaudio" width="98%" height="450" scrolling="no" frameborder="no" src="'+ result.audio + '"></iframe>');
 
                     } else if(result.audio && result.audio.length) {
 

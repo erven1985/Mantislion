@@ -3,6 +3,92 @@ RailsAdmin.config do |config|
   config.authorize_with do
     redirect_to main_app.root_path unless current_user.admin == true
   end
+
+  config.model 'News' do
+    edit do
+      field :title1
+      field :title
+      include_all_fields
+    end
+
+    show do
+      field :title1
+      field :title
+      include_all_fields
+    end
+
+    list do
+      field :id
+      field :title1
+      field :title
+      field :avatar
+      field :created_at
+      field :updated_at
+      include_all_fields
+    end
+  end
+
+  config.model 'Press' do
+    edit do
+      field :title
+      field :link
+      include_all_fields
+      exclude_fields :content
+    end
+    
+    show do
+      field :title
+      include_all_fields
+      exclude_fields :content
+    end
+
+     list do
+      field :id
+      field :title
+      field :link
+      include_all_fields
+      exclude_fields :content
+    end
+  end
+
+  config.model 'Event' do
+    edit do
+      field :title
+      include_all_fields
+      exclude_fields :content
+    end
+    
+    show do
+      field :title
+      include_all_fields
+      exclude_fields :content
+    end
+
+    list do
+      field :id
+      field :title
+      include_all_fields
+      exclude_fields :content
+    end
+  end
+
+  config.model 'User' do
+    # edit do
+    #   field :title
+    #   include_all_fields
+    #   exclude_fields :content
+    # end
+    list do
+      field :id
+      field :admin
+      field :firstname
+      field :lastname
+      field :email
+      field :sign_in_count
+      include_all_fields
+      exclude_fields :content
+    end
+  end
   ### Popular gems integration
 
   ## == Devise ==
@@ -42,3 +128,6 @@ RailsAdmin.config do |config|
     # history_show
   end
 end
+
+
+  
