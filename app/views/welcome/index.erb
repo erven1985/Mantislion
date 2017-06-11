@@ -415,15 +415,15 @@
     });
       
     $(document).ready(function(){
-      
-
-      $(window).on('resize', function() {
-        if($(window).width() < 768) {
-          $(".logo_m ").css('margin-right', '0px');
-          $('.press_con').css('height', '15%');
-       }
-      });  
   
+    var mywidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+        if(mywidth < 768) {
+          alert('yes')
+             $(".logo_m ").css('margin-right', '0px');
+             $('.press_cont').css('height', '15%');
+        }
+
         $(".close_sub_cat").click(function(){
         $('.content_sub').fadeOut('slow');
         
