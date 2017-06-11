@@ -64,7 +64,7 @@
 .logo_m{
   float:left;
   width:100px;
-  // margin-right: 50px;
+  margin-right: 50px;
   margin-left: 15px;  
 }
 .nav{
@@ -588,4 +588,13 @@ input {
 }
 a.scmedia:hover, a.scmedia:active, a.scmedia:visited, a.scmedia:focus {
   background-color: #fff;
+}
+
+@media(max-width: 768px) {
+  .logo_m {
+    margin-right: 0px;
+  }
+  .press_cont {
+    height: 15%;
+  }
 }
