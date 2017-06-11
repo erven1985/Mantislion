@@ -590,8 +590,11 @@ a.scmedia:hover, a.scmedia:active, a.scmedia:visited, a.scmedia:focus {
   background-color: #fff;
 }
 
-@media(max-width: 768px) {
-  .hot_box_bttn {
-    margin-left: -80px;
+@media(max-width: 500px) {
+  .logo_m {
+    margin-right: 0px;
+  }
+  .press_cont {
+    height: 15%;
   }
 }
