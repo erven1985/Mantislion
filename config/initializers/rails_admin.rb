@@ -56,6 +56,10 @@ RailsAdmin.config do |config|
   end
 
   config.model 'Press' do
+    
+    label "Press" 
+    label_plural "Press"
+    
     edit do
       field :title
       field :link
