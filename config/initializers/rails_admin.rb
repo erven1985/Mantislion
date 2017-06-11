@@ -11,10 +11,28 @@ RailsAdmin.config do |config|
       include_all_fields
     end
 
+    edit do
+      field :title do
+        label 'Title2'
+      end
+      field :avatar do
+        label 'Image'
+      end
+    end
+
     show do
       field :title1
       field :title
       include_all_fields
+    end
+
+    show do
+      field :title do
+        label 'Title2'
+      end
+      field :avatar do
+        label 'Image'
+      end
     end
 
     list do
@@ -26,6 +44,15 @@ RailsAdmin.config do |config|
       field :updated_at
       include_all_fields
     end
+
+    list do
+      field :title do
+        label 'Title2'
+      end
+      field :avatar do
+        label 'Image'
+      end
+    end
   end
 
   config.model 'Press' do
@@ -35,6 +62,12 @@ RailsAdmin.config do |config|
       include_all_fields
       exclude_fields :content
     end
+
+    edit do 
+      field :avatar do
+        label 'Image'
+      end
+    end 
     
     show do
       field :title
@@ -42,12 +75,25 @@ RailsAdmin.config do |config|
       exclude_fields :content
     end
 
+    show do 
+      field :avatar do
+        label 'Image'
+      end
+    end 
+
      list do
       field :id
       field :title
       field :link
+      field :avatar
       include_all_fields
       exclude_fields :content
+    end
+    
+    list do 
+      field :avatar do
+        label 'Image'
+      end
     end
   end
 
@@ -57,6 +103,12 @@ RailsAdmin.config do |config|
       include_all_fields
       exclude_fields :content
     end
+
+    edit do 
+       field :avatar do
+        label 'Image'
+      end
+    end
     
     show do
       field :title
@@ -64,20 +116,30 @@ RailsAdmin.config do |config|
       exclude_fields :content
     end
 
+    show do 
+      field :avatar do
+        label 'Image'
+      end
+    end
+
     list do
       field :id
       field :title
+      field :day
+      field :month
+      field :avatar
       include_all_fields
       exclude_fields :content
+    end
+
+    list do 
+      field :avatar do
+        label 'Image'
+      end
     end
   end
 
   config.model 'User' do
-    # edit do
-    #   field :title
-    #   include_all_fields
-    #   exclude_fields :content
-    # end
     list do
       field :id
       field :admin
@@ -87,6 +149,42 @@ RailsAdmin.config do |config|
       field :sign_in_count
       include_all_fields
       exclude_fields :content
+    end
+
+    list do 
+       field :firstname do
+        label 'First Name'
+      end
+      field :lastname do
+        label 'Last Name'
+      end
+    end
+
+    edit do 
+      include_all_fields
+      exclude_fields :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :reset_password_sent_at, :remember_created_at
+    end
+
+    edit do 
+       field :firstname do
+        label 'First Name'
+      end
+      field :lastname do
+        label 'Last Name'
+      end
+    end
+
+    show do 
+      include_all_fields
+    end
+
+    show do 
+       field :firstname do
+        label 'First Name'
+      end
+      field :lastname do
+        label 'Last Name'
+      end
     end
   end
   ### Popular gems integration
