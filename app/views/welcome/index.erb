@@ -352,7 +352,7 @@
            <div class="news_post" style="margin-top: 80px">
              <%= image_tag news.avatar.url %>
            <div class="news_post_title news_line">
-              <a id="<%= news.id %>"><span class="name_news"><%= news.title1 %></span><%= news.title %></a>
+              <a id="<%= news.id %>"><span class="name_news"><%= news.title1 %></span> <%= news.title %></a>
            </div>
            <div class="agenda_post_line"></div>
        </div>
@@ -485,7 +485,7 @@
                   dataType:"json",
                   success: function(result) {
                     // console.log(result)
-                    $("#nws-name").html('<span class="name_news_two" id="mytitle1">'+result.title1 + '</span>' + " " + result.title);
+                    $("#nws-name").html('<span class="name_news_two" id="mytitle1">'+result.title1 + '</span>' + "  " + result.title);
                     $("#nws-image").html('<img src="' + result.avatar_url + '" id="myimg" class="img-responsive">');
                     $("#nws-posted").html('<span> Posted '+ $.format.date(result.created_at, "MMM dd, yyyy") + ' by </span>' + '<span style="color:#44031c; font-weight:600" id="nws-author"></span> <span id="authorfb"></span> <span id="authortwt"></span> <span id="authorinst"></span>');
                    
