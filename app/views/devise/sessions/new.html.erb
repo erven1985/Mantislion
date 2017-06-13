@@ -11,10 +11,10 @@
     <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
   <% if devise_mapping.rememberable? -%>
     <div class="form-group">
-       <input type="checkbox" name="user[remember_me]" value="1" checked="checked" /> &nbsp;&nbsp;<%= f.label :remember_me %> 
+       <input type="checkbox" name="user[remember_me]" value="1" checked="checked" /> &nbsp;&nbsp;<%= f.label :remember_me, :class => "my" %> 
     </div>
   <% end -%>
-    <%= f.submit "Log in", :class => "btn btn-lg btn-primary btn-block" %>
+    <%= f.submit "LOG IN", :class => "btn btn-lg btn-warning btn-block" %>
 <% end %>
 
 </div>
@@ -25,7 +25,10 @@
 <style>
   
 body  {
-  background:   #778899 !important;  
+  /*background:   #778899 !important;  */
+  background-image: url('../images/djenuff_01.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .wrapper {  
@@ -36,7 +39,7 @@ body  {
 .col-xs-8.col-xs-offset-0.col-sm-4.col-sm-offset-4 {
   -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.3) inset;
   padding: 0px 30px;
   margin-top: 12%;
   margin-left: 38%;  
@@ -51,12 +54,22 @@ body  {
   .form-signin-heading,
   .checkbox {
     margin-bottom: 30px;
+    color: #fff;
   }
 
+  .form-signin-heading {
+    font-size: 1vw;
+    text-transform: uppercase;
+  }
+  .btn.btn-lg.btn-warning.btn-block {
+    font-size: 0.9vw;
+  }
   .checkbox {
     font-weight: normal;
   }
-
+  .my {
+    color: #fff;
+  }
   .form-control {
     position: relative;
     font-size: 16px;
