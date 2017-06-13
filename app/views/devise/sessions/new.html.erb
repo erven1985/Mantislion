@@ -36,13 +36,16 @@
       var mywidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
       if(mywidth < 990) {
          $(".col-xs-8.col-xs-offset-0.col-sm-4.col-sm-offset-4").css('margin-top', '30%');
-         $(".col-xs-8.col-xs-offset-0.col-sm-4.col-sm-offset-4").css('margin-left', '20%');
          $("body").css('background-image', 'none' );
          $("body").css('background', '#778899' );
       } else {
          $("body").css('background-image', "url('../images/djenuff_01.png')" );
          $(".col-xs-8.col-xs-offset-0.col-sm-4.col-sm-offset-4").css('margin-top', '6%');
-         $(".col-xs-8.col-xs-offset-0.col-sm-4.col-sm-offset-4").css('margin-left', '38%');
+      }
+      if(mywidth < 500) { 
+        $(".col-xs-8.col-xs-offset-0.col-sm-4.col-sm-offset-4").css('margin-left', '20%');
+      } else {
+        $(".col-xs-8.col-xs-offset-0.col-sm-4.col-sm-offset-4").css('margin-left', '38%');
       }
   }
 </script>
